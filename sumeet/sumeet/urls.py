@@ -17,6 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from course import views
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+        path('admin/', admin.site.urls),
+        path('learndj/',views.learn_django),
+        path('learnpy/',views.learn_python),
+        path('learnv/',views.learn_variable),
+        path('learnm/',views.learn_math),
+        path('learnf/',views.learn_format)
 ]
