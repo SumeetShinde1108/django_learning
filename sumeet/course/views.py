@@ -4,10 +4,10 @@ def index(request):
     return HttpResponse('Home page')
 
 def learn_django(request):
-    return HttpResponse('<h1>Hello Django</h1>')
+    return render(request,'courseone.html')
 
 def learn_python(request):
-    return HttpResponse("<h1>Hello Python</h1>")
+    return render(request,'coursetwo.html')
 
 def learn_variable(request):
     a="<h1>Hello Variable</h1>"
@@ -21,3 +21,5 @@ def learn_format(request):
     a='Sumeet Shinde'
     return HttpResponse(f'Hello! How are you {a}')
 
+def learn_temp(request):
+    return HttpResponse
