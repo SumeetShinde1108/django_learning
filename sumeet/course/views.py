@@ -4,7 +4,11 @@ def index(request):
     return HttpResponse('Home page')
 
 def learn_django(request):
-    return render(request,'courseone.html')
+    cname='Django'
+    duration= '4 Months'
+    seats=10
+    django_details={'nm':cname,'du':duration,'st':seats }
+    return render(request,'courseone.html',django_details)
 
 def learn_python(request):
     return render(request,'coursetwo.html')
