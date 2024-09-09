@@ -11,9 +11,15 @@
     <title>Django</title>
 </head>  
 <body>
-<h1>Hello {{nm}},
-    Course duration will be {{du}},
-    Available seats are {{st}}.
-</h1>
+{%if nm%}
+<h1>Course name is {{nm}}</h1>
+{%endif%}
+  <h2>  Course duration will be {{du|capfirst}}</h2>
+  <h2>Availbele seats are {{st}}</h2>
+  {%if not st%}
+  <h2>Available seats are not available</h2>
+  {%endif%}
+    <h2>Date is {{dt|date:'D d M Y'}}</h2>
+    <h2>Time is {{dt|time:'H:i'}}</h2>
 </body>
 </html>
