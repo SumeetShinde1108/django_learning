@@ -1,13 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from datetime import datetime 
 def index(request):
     return HttpResponse('Home page')
 
 def learn_django(request):
+    date_time=datetime.now()
     cname='Django'
     duration= '4 Months'
-    seats=10
-    django_details={'nm':cname,'du':duration,'st':seats }
+    seats='5'
+    django_details={'nm':cname,'du':duration,'st':seats ,'dt':date_time}
     return render(request,'courseone.html',django_details)
 
 def learn_python(request):
