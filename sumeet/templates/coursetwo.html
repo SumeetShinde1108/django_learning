@@ -1,17 +1,21 @@
 <!DOCTYPE html>
+ {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body{
-            
-            background-color: red;
-        }
-    </style>
-    <title>Python</title>
+    <link rel="stylesheet" href="{%static 'css/style.css'%}"/>
+    <title>{{title}}</title>
 </head>
-<body>
-<h1>Hello Python</h1>
+  <body>
+
+  <h1> Start Learning {{cn}}</h1>
+  <img src="{% get_static_prefix %}images/marto.jpg" alt="Django"/> 
+  <img src="{% get_static_prefix %}images/Aussies.jpg" alt="Django"/> 
+  <hr>
+  <form action="">
+  <input type="button" value="Click Me" onclick="display()">
+  </form>
+  <script src="{%static 'js/all.js'%}"></script
 </body>
 </html>

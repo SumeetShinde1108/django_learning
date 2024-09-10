@@ -9,11 +9,14 @@ def learn_django(request):
     cname='Django'
     duration= '4 Months'
     seats='5'
-    django_details={'nm':cname,'du':duration,'st':seats ,'dt':date_time}
+    title='Learn Django'
+    django_details={'tt':title, 'nm':cname,'du':duration,'st':seats ,'dt':date_time}
     return render(request,'courseone.html',django_details)
 
 def learn_python(request):
-    return render(request,'coursetwo.html')
+    cname='Python'
+    py_details={'cn':cname}
+    return render(request,'coursetwo.html',py_details)
 
 def learn_variable(request):
     a="<h1>Hello Variable</h1>"
