@@ -19,8 +19,9 @@ def learn_python(request):
     return render(request,'coursetwo.html',py_details)
 
 def learn_variable(request):
-    a="<h1>Hello Variable</h1>"
-    return HttpResponse(a)
+    a="Hello! This is a variable page"
+    var_details={'var':a}
+    return render(request,'child.html',var_details)
 
 def learn_math(request):
     a=10+12
