@@ -1,11 +1,13 @@
-<html>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
 <head>
-<title>{% block title %} Variable {% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Variable {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/core.css'%}"
 </head>
 <body>
-{% block content%}{% endblock content%}
+    <h1>{% block content%}{% endblock content%}</h1>   
 </body>
 </html>
-
-
-
