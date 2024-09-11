@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include 
+from course import views
 
 urlpatterns = [
         path('admin/', admin.site.urls),
-        path('cor/',include('course.urls')),
+        path('learndj/',views.learn_django),
+        path('learnpy/',views.learn_python),
+        path('',views.index),
+        path('learnv/',views.learn_variable)
 ]
- 
