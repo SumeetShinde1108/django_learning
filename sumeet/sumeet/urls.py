@@ -20,8 +20,9 @@ from course import views
 
 urlpatterns = [
         path('admin/', admin.site.urls),
-        path('learndj/',views.learn_django),
-        path('learnpy/',views.learn_python),
+        path('learndj/',views.learn_django,name='django'),
+        path('learnpy/',views.learn_python,name='python'),
         path('',views.index),
-        path('learnv/',views.learn_variable)
+        path('learnv/',views.learn_variable,name='variable'),
+        path('about/',views.about,name='about')
 ]

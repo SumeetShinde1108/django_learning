@@ -23,4 +23,7 @@ def learn_variable(request):
     var_details={'var':a}
     return render(request,'variable.html',var_details)
 
+def about(request):
+    return HttpResponse("THIS ABOUT PAGE")    
+
 
