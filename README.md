@@ -1,2 +1,2 @@
-# django_learning is for my recent django learning progress1
+# django_learning is for my recent django learning progress
 # Resume project 
