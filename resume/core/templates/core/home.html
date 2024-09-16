@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="{% static 'core/css/all.min.css'%}">
-    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}">
-    <link rel="stylesheet" href="{% static 'core/css/core.css'%}">
-</head>
+    <link rel="stylesheet" href="{% static 'core/css/all.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css'%}" />
+    {% block corecss %}
+    <link rel="stylesheet" href="{% static 'core/css/core.css'%}" />
+    {% endblock corecss %}
+  </head>
 
-<body>
+  <body>
     <div class="container-fluid bg-dark">
-        <div class="row">
-            <div class="col-sm-2">
-                <div class="border-right border-warning h-100 ">
-                    <div class="text-center">
-
-                        <img src="{% static 'core/images/photo.jpg'%}" alt="ProfilePic"
-                            class="img-fluid rounded-circle mt-5" width="100px" height="100px">
-                        <h3 class="text-white mt-3"> Pratik Adhav</h3>
-                    </div>
-                    <hr class="border-light">
-
-                    <nav class="nav flex-column text-center ">
-                        <a href="" class="nav-link">Home</a>
-                        <a href="" class="nav-link">Services</a>
-                        <a href="" class="nav-link">Skill</a>
-                        <a href="" class="nav-link">Contact</a>
-                    </nav>
-                </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="border-right border-warning h-100">
+            <div class="text-center">
+              <img
+                src="{% static 'core/images/photo.jpg'%}"
+                alt="ProfilePic"
+                class="img-fluid rounded-circle mt-5"
+                width="100px"
+                height="100px"
+              />
+              <h3 class="text-white mt-3">Pratik Adhav</h3>
             </div>
+            <hr class="border-light" />
 
+            <nav class="nav flex-column text-center">
+              <a href="" class="nav-link">Home</a>
+              <a href="" class="nav-link">Services</a>
+              <a href="" class="nav-link">Skill</a>
+              <a href="" class="nav-link">Contact</a>
+            </nav>
+          </div>
         </div>
-        <div class="col-sm-10">
-  
-            Main content
-        </div>
+      </div>
+      <div class="col-sm-10">
+        {% block content%} {% endblock content %} Main content
+      </div>
     </div>
 
-
-
-
-    <script src="{%static 'core/js/jquery.js'%}"> </script>
-    <script src="{%static 'core/js/proper.js'%}"> </script>
-    <script src="{%static 'core/js/bootstrap.js'%}"> </script>
-    <script src="{%static 'core/js/all.min.js'%}"> </script>
-
-</body>
-<i class="fa-solid fa-compass"></i>
-
+    <script src="{%static 'core/js/jquery.js'%}"></script>
+    <script src="{%static 'core/js/proper.js'%}"></script>
+    <script src="{%static 'core/js/bootstrap.js'%}"></script>
+    <script src="{%static 'core/js/all.min.js'%}"></script>
+  </body>
+  <i class="fa-solid fa-compass"></i>
 </html>
