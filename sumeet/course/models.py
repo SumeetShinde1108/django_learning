@@ -1,8 +1,7 @@
 from django.db import models
 
 class Student(models.Model):
-    stuid=models.IntegerField
+    stuid=models.IntegerField(null=True)
     stuname=models.CharField(max_length=70)
     stuemail=models.EmailField(max_length=70)
     stupass=models.CharField(max_length=70)
-    comments=models.CharField(max_length=40,default='not available')
