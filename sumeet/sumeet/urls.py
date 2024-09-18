@@ -23,6 +23,7 @@ urlpatterns = [
         path('learndj/',views.learn_django,name='django'),
         path('learnpy/',views.learn_python,name='python'),
         path('',views.index),
+        path('student/',views.studentinfo,name='student'),
         path('learnv/',views.learn_variable,name='variable'),
         path('about/',views.about,name='about')
 ]
