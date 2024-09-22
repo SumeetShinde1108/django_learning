@@ -8,4 +8,8 @@ class Student(models.Model):
     def __str__(self):
         return self.stuname
 
+    '''for printing integer, wrapped it in a str()
+    def __str__(self):
+        return str(self.stuid)''' 
+
   

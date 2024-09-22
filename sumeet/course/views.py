@@ -20,7 +20,9 @@ def studentinfo(request):
 
 def learn_python(request):
     cname='Python'
-    py_details={'cn':cname}
+    duration='4 weeks'
+    complexity='Medium'
+    py_details={'cn':cname,'du':duration,'cm':complexity}
     return render(request,'python.html',py_details)
 
 def learn_variable(request):
