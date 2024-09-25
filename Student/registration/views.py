@@ -11,13 +11,18 @@ def contact_view(request):
             name=fm.cleaned_data['name']
             email=fm.cleaned_data['email']
             address=fm.cleaned_data['address']
+            password=fm.cleaned_data['password']
             print("Form is validated")
             print('name:',name)
             print('email:',email)
             print('address:',address)
+            print('password:',password)
+            print('rpassword:',rpassword)
             details={'nm':name,'em':email,'add':address}
             return HttpResponseRedirect('/success/')
             #return render(request,'output.html',details)
+
+            
     else:
         fm=ContactForm() 
         print("This coming from get request")
