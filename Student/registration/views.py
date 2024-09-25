@@ -12,6 +12,7 @@ def contact_view(request):
             email=fm.cleaned_data['email']
             address=fm.cleaned_data['address']
             password=fm.cleaned_data['password']
+            rpassword=fm.cleaned_data['rpassword']
             print("Form is validated")
             print('name:',name)
             print('email:',email)
