@@ -20,5 +20,6 @@ from registration import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contact/', views.contact_view, name='contact'),
+    path('success/',views.output),
+    path('contact/', views.contact_view)
 ]
