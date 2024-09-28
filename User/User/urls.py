@@ -20,6 +20,6 @@ from registration import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('input/',views.get_data),
+    path('input/<my_id>/',views.get_data),
     path('success/',views.redirect)
 ]
