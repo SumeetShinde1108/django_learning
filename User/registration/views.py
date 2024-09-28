@@ -6,10 +6,10 @@ from registration.models import UserData
 def redirect(request):
      return render(request,'success.html')
 
-def get_data(request):
+def get_data(request, my_id):
+    print(my_id)
     if request.method=="POST":
-
-        
+       
         fm=UserForm(request.POST)
         if fm.is_valid():
             nm=fm.cleaned_data['name']
