@@ -3,3 +3,4 @@
 # The sumeet project for fundamentals of django.
 # The user project is for getting user input and saving it to the database.
 # crud is for create, read, update, delete such operations.
+# Login and logout using AuthenticationForm.
