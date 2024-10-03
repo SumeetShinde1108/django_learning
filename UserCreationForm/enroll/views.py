@@ -32,7 +32,7 @@ def  user_login(request):
  
 # Profile
 def user_profile(request):
-    if request.user.is_authenticatted:
+    if request.user.is_authenticated:
         return render(request,'profile.html',{'name':request.name})
     else:
         return HttpResponseRedirect('/login/')
