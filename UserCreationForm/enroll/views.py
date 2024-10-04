@@ -34,8 +34,6 @@ def  user_login(request):
 def user_profile(request):
     if request.user.is_authenticated:
         return render(request,'profile.html',{'name':request.name})
-    else:
-        return HttpResponseRedirect('/login/')
 
 #Logout
 def user_logout(request):
