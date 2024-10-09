@@ -1,4 +1,4 @@
-'''from django.shortcuts import render
+from django.shortcuts import render
 import io
 from .models import Student
 from rest_framework.parsers import JSONParser
@@ -33,37 +33,33 @@ def student_api(request):
             res={"msg":'Data Created'}
             json_data=JSONRenderer().render(res)
             return HttpResponse(json_data, content_type="application/json")
-    
-    
     json_data=JSONRenderer().render(serializer.errors)
     return HttpResponse(json_data, content_type="application/json")
 
-'''
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
-from rest_framework import status
-from .models import Student
-from .serializers import StudentSerializer
-
-@api_view(['GET', 'POST'])
-def student_api(request):
-    if request.method == 'GET':
-        id = request.GET.get('id', None)
-        if id is not None:
-            try:
-                stu = Student.objects.get(id=id)
-                serializer = StudentSerializer(stu)
-                return Response(serializer.data)
-            except Student.DoesNotExist:
-                return Response({'error': 'Student not found'}, status=status.HTTP_404_NOT_FOUND)
-        else:
-            stu = Student.objects.all()
-            serializer = StudentSerializer(stu, many=True)
-            return Response(serializer.data)
-
-    elif request.method == 'POST':
-        serializer = StudentSerializer(data=request.data)
+    if request.method=="PUT":
+        json_data=request.body
+        stream=io.BytesIO(json_data)
+        python_data=JSONParser().parse(stream)
+        id=python_data.get('id')
+        stu=Student.objects.get(id=id)
+        serializer=StudentSerializer(stu, data=python_data , partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({'msg': 'Data Created'}, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            res={"msg":"Data Updates Successfully"}
+            json_data=JSONRenderer.render(res)
+            return HttpResponse(json_data,content_type='application/json')
+        json_data=JSONRenderer.render(serializer.errors)
+        return HttpResponse(json_data,content_type='application/json')
+
+    if request.method=="DELETE":
+        json_data=request.body
+        stream=io.BytesIO(json_data)
+        python_data=JSONParser().parse(stream)
+        id=python_data.get('id') 
+        stu=Student.objects.get(id=id)  
+        serializer=StudentSerializer(stu)
+        stu.delete()
+        res={"msg":"Data deleted Successfully"}
+        json_data=JSONRenderer.render(res)
+        return HttpResponse(json_data,content_type='application/json')
+
